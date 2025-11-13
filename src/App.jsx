@@ -1,5 +1,5 @@
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -23,8 +23,7 @@ function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Cursor />
+    <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
@@ -42,93 +41,51 @@ function AnimatedRoutes() {
         />
         <Route
           path="/destinations"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <Destinations />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><Destinations /></motion.div>}
         />
         <Route
           path="/experiences"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <Experiences />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><Experiences /></motion.div>}
         />
         <Route
           path="/reviews"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <Reviews />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><Reviews /></motion.div>}
         />
         <Route
           path="/stay"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <StayDetails />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><StayDetails /></motion.div>}
         />
         <Route
           path="/experience-detail"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <ExperienceDetails />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><ExperienceDetails /></motion.div>}
         />
       </Routes>
     </AnimatePresence>
   );
 }
 
-function App() {
+const motionProps = {
+  variants: pageVariants,
+  initial: "initial",
+  animate: "animate",
+  exit: "exit",
+  transition: { duration: 0.6 },
+};
+
+export default function App() {
   const [loadingDone, setLoadingDone] = useState(false);
 
   useEffect(() => {
-   
     const timer = setTimeout(() => setLoadingDone(true), 2500);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
+      <Cursor /> {/* 👈 Global cursor — always active */}
       {!loadingDone && <LoadingScreen />}
       {loadingDone && (
-        <div className="min-h-screen bg-white transition-all duration-700" data-scroll-container>
+        <div className="min-h-screen bg-white transition-all duration-700">
           <Navbar />
           <ScrollToTop />
           <AnimatedRoutes />
@@ -137,5 +94,3 @@ function App() {
     </>
   );
 }
-
-export default App;
