@@ -26,7 +26,7 @@ export default function LoadingScreen() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        Loading your travel experience ✈️
+        Finding your perfect stay 🏨
       </motion.h1>
 
       <motion.div
