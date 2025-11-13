@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
   
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}>
-            <h3 className="text-2xl font-bold text-teal-400 mb-4">✈️ TravelHub</h3>
+            <h3 className="text-2xl font-bold text-teal-400 mb-4">Airbnb</h3>
             <p className="text-gray-400">Discover extraordinary places and create unforgettable memories.</p>
           </motion.div>
 
