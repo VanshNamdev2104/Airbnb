@@ -7,7 +7,7 @@ export const staysData = [
     price: 450,
     rating: 4.9,
     reviews: 128,
-    image: "/modern-beachfront-villa-bali.png",
+    image: "/Airbnb/modern-beachfront-villa-bali.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const staysData = [
     price: 85,
     rating: 4.7,
     reviews: 342,
-    image: "/cozy-downtown-apartment-barcelona.jpg",
+    image: "/Airbnb/cozy-downtown-apartment-barcelona.jpg",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const staysData = [
     price: 650,
     rating: 4.95,
     reviews: 89,
-    image: "/luxury-mountain-chalet-aspen.jpg",
+    image: "/Airbnb/luxury-mountain-chalet-aspen.jpg",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const staysData = [
     price: 120,
     rating: 4.8,
     reviews: 215,
-    image: "/tropical-garden-house-thailand.jpg",
+    image: "/Airbnb/tropical-garden-house-thailand.jpg",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const staysData = [
     price: 95,
     rating: 4.6,
     reviews: 567,
-    image: "/historic-parisian-studio-apartment.jpg",
+    image: "/Airbnb/historic-parisian-studio-apartment.jpg",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const staysData = [
     price: 800,
     rating: 5.0,
     reviews: 64,
-    image: "/exclusive-island-villa-maldives.jpg",
+    image: "/Airbnb/exclusive-island-villa-maldives.jpg",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const staysData = [
     price: 110,
     rating: 4.7,
     reviews: 298,
-    image: "/zen-minimalist-loft-tokyo.jpg",
+    image: "/Airbnb/zen-minimalist-loft-tokyo.jpg",
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const staysData = [
     price: 320,
     rating: 4.85,
     reviews: 176,
-    image: "/swiss-alpine-cottage.jpg",
+    image: "/Airbnb/swiss-alpine-cottage.jpg",
   },
   {
   id: 9,
@@ -87,7 +87,7 @@ export const staysData = [
   price: 70,
   rating: 4.5,
   reviews: 154,
-  image: "/rustic-countryside-cabin-nainital.jpg",
+  image: "/Airbnb/rustic-countryside-cabin-nainital.jpg",
 },
 {
   id: 10,
@@ -97,7 +97,7 @@ export const staysData = [
   price: 250,
   rating: 4.9,
   reviews: 82,
-  image: "/modern-desert-dome-dubai.jpg",
+  image: "/Airbnb/modern-desert-dome-dubai.jpg",
 },
 {
   id: 11,
@@ -107,7 +107,7 @@ export const staysData = [
   price: 950,
   rating: 5.0,
   reviews: 203,
-  image: "/skyline-penthouse-suite-nyc.jpg",
+  image: "/Airbnb/skyline-penthouse-suite-nyc.jpg",
 },
 {
   id: 12,
@@ -117,7 +117,7 @@ export const staysData = [
   price: 180,
   rating: 4.8,
   reviews: 127,
-  image: "/traditional-riad-marrakech.jpg",
+  image: "/Airbnb/traditional-riad-marrakech.jpg",
 },
 {
   id: 13,
@@ -127,7 +127,7 @@ export const staysData = [
   price: 340,
   rating: 4.9,
   reviews: 98,
-  image: "/snowy-ski-lodge-banff.jpg",
+  image: "/Airbnb/snowy-ski-lodge-banff.jpg",
 },
 {
   id: 14,
@@ -137,7 +137,7 @@ export const staysData = [
   price: 400,
   rating: 4.92,
   reviews: 65,
-  image: "/desert-cliff-villa-petra.jpg",
+  image: "/Airbnb/desert-cliff-villa-petra.jpg",
 },
 {
   id: 15,
@@ -147,7 +147,7 @@ export const staysData = [
   price: 150,
   rating: 4.85,
   reviews: 234,
-  image: "/floating-river-bungalow-thailand.jpg",
+  image: "/Airbnb/floating-river-bungalow-thailand.jpg",
 },
 {
   id: 16,
@@ -157,7 +157,7 @@ export const staysData = [
   price: 220,
   rating: 4.93,
   reviews: 144,
-  image: "/glass-forest-retreat-bali.jpg",
+  image: "/Airbnb/glass-forest-retreat-bali.jpg",
 },
 {
   id: 17,
@@ -167,7 +167,7 @@ export const staysData = [
   price: 180,
   rating: 4.88,
   reviews: 312,
-  image: "/seaside-cliff-apartment-santorini.jpg",
+  image: "/Airbnb/seaside-cliff-apartment-santorini.jpg",
 },
 {
   id: 18,
@@ -177,7 +177,7 @@ export const staysData = [
   price: 260,
   rating: 4.91,
   reviews: 77,
-  image: "/safari-treehouse-nairobi.jpg",
+  image: "/Airbnb/safari-treehouse-nairobi.jpg",
 },
 {
   id: 19,
@@ -187,7 +187,7 @@ export const staysData = [
   price: 95,
   rating: 4.6,
   reviews: 389,
-  image: "/urban-smart-studio-berlin.jpg",
+  image: "/Airbnb/urban-smart-studio-berlin.jpg",
 }
 
 ]
@@ -199,7 +199,7 @@ export const experiencesData = [
     description: "Learn to surf with experienced instructors on beautiful waves",
     price: 75,
     duration: "2 hours",
-    image: "/surfing-lessons.jpg",
+    image: "/Airbnb/surfing-lessons.jpg",
   },
   {
     id: 2,
@@ -207,7 +207,7 @@ export const experiencesData = [
     description: "Traditional cooking with local chefs using fresh ingredients",
     price: 65,
     duration: "3 hours",
-    image: "/cooking-class.png",
+    image: "/Airbnb/cooking-class.png",
   },
   {
     id: 3,
@@ -215,7 +215,7 @@ export const experiencesData = [
     description: "Guided hiking tour through scenic mountain trails",
     price: 55,
     duration: "4 hours",
-    image: "/mountain-hiking.png",
+    image: "/Airbnb/mountain-hiking.png",
   },
   {
     id: 4,
@@ -223,7 +223,7 @@ export const experiencesData = [
     description: "Relaxing yoga session in a serene natural setting",
     price: 45,
     duration: "1.5 hours",
-    image: "/yoga-meditation.png",
+    image: "/Airbnb/yoga-meditation.png",
   },
   {
     id: 5,
@@ -231,7 +231,7 @@ export const experiencesData = [
     description: "Explore street food and local delicacies with a food guide",
     price: 85,
     duration: "3 hours",
-    image: "/city-food-tour.jpg",
+    image: "/Airbnb/city-food-tour.jpg",
   },
   {
     id: 6,
@@ -239,7 +239,7 @@ export const experiencesData = [
     description: "Underwater adventure exploring coral reefs and marine life",
     price: 120,
     duration: "3 hours",
-    image: "/scuba-diving.jpg",
+    image: "/Airbnb/scuba-diving.jpg",
   },
   {
     id: 7,
@@ -247,7 +247,7 @@ export const experiencesData = [
     description: "Guided photography tour capturing the beauty of the city",
     price: 50,
     duration: "2.5 hours",
-    image: "/photography-tour.png",
+    image: "/Airbnb/photography-tour.png",
   },
   {
     id: 8,
@@ -255,7 +255,7 @@ export const experiencesData = [
     description: "Sample premium wines with expert sommelier guidance",
     price: 95,
     duration: "2 hours",
-    image: "/wine-tasting.png",
+    image: "/Airbnb/wine-tasting.png",
   },
   {
   id: 9,
@@ -263,7 +263,7 @@ export const experiencesData = [
   description: "Sail across crystal waters and enjoy breathtaking sunsets with champagne",
   price: 180,
   duration: "3 hours",
-  image: "/sunset-yacht-cruise.jpg",
+  image: "/Airbnb/sunset-yacht-cruise.jpg",
 },
 {
   id: 10,
@@ -271,7 +271,7 @@ export const experiencesData = [
   description: "Find peace with a guided meditation session in serene mountain views",
   price: 60,
   duration: "1.5 hours",
-  image: "/meditation-in-the-mountains.jpg",
+  image: "/Airbnb/meditation-in-the-mountains.jpg",
 },
 {
   id: 11,
@@ -279,7 +279,7 @@ export const experiencesData = [
   description: "Learn to cook authentic local dishes with a professional chef",
   price: 120,
   duration: "2.5 hours",
-  image: "/local-cooking-masterclass.jpg",
+  image: "/Airbnb/local-cooking-masterclass.jpg",
 }
 ]
 
@@ -290,7 +290,7 @@ export const testimonialsData = [
     role: "Travel Blogger",
     rating: 5,
     text: "This platform completely transformed how I travel. Finding amazing stays has never been easier, and the experiences are unforgettable!",
-    avatar: "/diverse-woman-portrait.png",
+    avatar: "/Airbnb/Airbnb/diverse-woman-portrait.png",
   },
   {
     id: 2,
@@ -298,7 +298,7 @@ export const testimonialsData = [
     role: "Adventure Enthusiast",
     rating: 5,
     text: "The variety of experiences available is incredible. I've tried things I never would have found otherwise. Highly recommended!",
-    avatar: "/man.jpg",
+    avatar: "/Airbnb/man.jpg",
   },
   {
     id: 3,
@@ -306,7 +306,7 @@ export const testimonialsData = [
     role: "Frequent Traveler",
     rating: 4,
     text: "Great selection of properties and excellent customer service. Made my vacation planning stress-free and exciting.",
-    avatar: "/diverse-woman-portrait.png",
+    avatar: "/Airbnb/diverse-woman-portrait.png",
   },
   {
     id: 4,
@@ -314,7 +314,7 @@ export const testimonialsData = [
     role: "Business Traveler",
     rating: 5,
     text: "Perfect for both leisure and business trips. The search functionality is intuitive and the listings are authentic.",
-    avatar: "/man.jpg",
+    avatar: "/Airbnb/man.jpg",
   },
   {
     id: 5,
@@ -322,7 +322,7 @@ export const testimonialsData = [
     role: "Family Travel Expert",
     rating: 5,
     text: "My family loved every moment. The platform makes it so easy to find family-friendly accommodations and activities.",
-    avatar: "/diverse-woman-portrait.png",
+    avatar: "/Airbnb/diverse-woman-portrait.png",
   },
   {
     id: 6,
@@ -330,7 +330,7 @@ export const testimonialsData = [
     role: "Solo Traveler",
     rating: 4,
     text: "Safe, reliable, and full of amazing opportunities. This is my go-to platform for solo adventures around the world.",
-    avatar: "/man.jpg",
+    avatar: "/Airbnb/man.jpg",
   },
 ]
 

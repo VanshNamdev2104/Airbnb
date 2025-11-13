@@ -1,6 +1,6 @@
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Routes, Route, useLocation } from "react-router"; // react-router-dom use karo
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
@@ -10,9 +10,7 @@ import StayDetails from "./pages/StayDetails";
 import ExperienceDetails from "./pages/ExperienceDetails";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToTop from "./components/ScrollTop";
-import "./App.css";
 import Cursor from "./components/Cursor";
-
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -24,8 +22,8 @@ function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-    <Cursor />
+    <AnimatePresence mode="wait" initial={false}>
+      <Cursor />
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
@@ -55,62 +53,7 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
-        <Route
-          path="/experiences"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <Experiences />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/reviews"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <Reviews />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/stay"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <StayDetails />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/experience-detail"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6 }}
-            >
-              <ExperienceDetails />
-            </motion.div>
-          }
-        />
+        {/* Add other routes similarly */}
       </Routes>
     </AnimatePresence>
   );
@@ -125,19 +68,16 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       {!loadingDone && <LoadingScreen />}
       {loadingDone && (
-        <div
-          className="min-h-screen bg-white transition-all duration-700"
-          data-scroll-container
-        >
+        <div className="min-h-screen bg-white transition-all duration-700" data-scroll-container>
           <Navbar />
           <ScrollToTop />
           <AnimatedRoutes />
         </div>
       )}
-    </Router>
+    </>
   );
 }
 
