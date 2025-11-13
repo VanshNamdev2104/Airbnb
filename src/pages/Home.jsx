@@ -5,11 +5,9 @@ import { motion } from "framer-motion";
 import SearchBar from "../components/SearchBar";
 import StayCard from "../components/StayCard";
 import ExperienceCard from "../components/ExperienceCard";
-import TestimonialCard from "../components/TestimonialCard";
 import {
   staysData,
   experiencesData,
-  testimonialsData,
   categoriesData,
 } from "../data/mockData";
 
@@ -22,30 +20,32 @@ export default function Home() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.from(".hero-title", { y: 60, opacity: 0, duration: 1 })
-        .from(".hero-desc", { y: 30, opacity: 0, duration: 0.8 }, "-=0.4")
-        .from(".search-bar", { y: 40, opacity: 0, duration: 0.8 }, "-=0.3");
 
-      // Floating background animation
+      // Hero animation (faster)
+      tl.from(".hero-title", { y: 40, opacity: 0, duration: 0.7 })
+        .from(".hero-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+        .from(".search-bar", { y: 30, opacity: 0, duration: 0.6 }, "-=0.4");
+
+      // Floating background (reduced movement)
       gsap.to(".floating-bg", {
-        y: 40,
-        duration: 6,
+        y: 25,
+        duration: 4,
         ease: "sine.inOut",
         repeat: -1,
         yoyo: true,
       });
 
-      // Section reveal
+      // Section reveal (quicker)
       gsap.utils.toArray(".reveal-section").forEach((section) => {
         gsap.from(section, {
           opacity: 0,
-          y: 80,
-          duration: 1.2,
-          ease: "power3.out",
+          y: 60,
+          duration: 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
-            scrub: 1.5,
+            start: "top 90%",
+            scrub: 1,
           },
         });
       });
@@ -63,29 +63,26 @@ export default function Home() {
 
   return (
     <main ref={heroRef} className="w-full relative overflow-hidden">
-     
+      {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16">
-      
         <div className="absolute inset-0 floating-bg bg-linear-to-r from-blue-100 via-teal-100 to-blue-50 opacity-70 blur-3xl"></div>
 
-   
         <motion.div
           className="absolute top-1/3 left-10 text-5xl"
-          animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
         >
           🏔️
         </motion.div>
 
         <motion.div
           className="absolute bottom-1/3 right-10 text-5xl"
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          animate={{ y: [0, 12, 0], rotate: [0, -8, 0] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
         >
           ✈️
         </motion.div>
 
-       
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="hero-title text-5xl md:text-7xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-blue-600 to-teal-500 animate-gradient">
             Discover Your Next Adventure
@@ -95,24 +92,21 @@ export default function Home() {
             the world
           </p>
 
-          
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 bottom-0 w-48 h-1 rounded-full bg-linear-gradient-to-r from-teal-400 to-blue-500"
             animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           ></motion.div>
         </div>
 
-       
         <div className="absolute top-22 w-full px-4 search-bar z-20">
           <SearchBar />
         </div>
 
-       
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 text-teal-600 flex flex-col items-center gap-1 cursor-pointer"
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 1.5, repeat: Infinity }}
         >
           <span className="text-sm tracking-widest">Explore More</span>
           <svg
@@ -131,9 +125,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      
-      <section className="reveal-section px-4 max-w-7xl mx-auto mt-24">
-        <div className="mb-12 text-center">
+      {/* Category Section */}
+      <section className="reveal-section px-4 max-w-7xl mx-auto mt-20">
+        <div className="mb-10 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-2">
             Search by Category
           </h2>
@@ -148,17 +142,17 @@ export default function Home() {
               <motion.div
                 key={index}
                 onClick={() => setSelectedCategory(category.name)}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
+                transition={{ delay: index * 0.03 }}
+                whileHover={{ y: -6 }}
                 className={`text-center cursor-pointer group p-4 rounded-xl border ${
                   selectedCategory === category.name
                     ? "bg-teal-50 border-teal-500 shadow-md"
                     : "border-transparent hover:border-gray-200"
                 }`}
               >
-                <div className="text-5xl mb-3 group-hover:scale-125 transition transform">
+                <div className="text-4xl mb-3 group-hover:scale-110 transition transform">
                   {category.icon}
                 </div>
                 <p
@@ -176,9 +170,9 @@ export default function Home() {
         </div>
       </section>
 
-      
-      <section className="reveal-section py-16 px-4 max-w-7xl mx-auto">
-        <div className="mb-12 flex justify-between items-center">
+      {/* Stays Section */}
+      <section className="reveal-section py-14 px-4 max-w-7xl mx-auto">
+        <div className="mb-10 flex justify-between items-center">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-2">
               {selectedCategory === "All"
@@ -194,13 +188,13 @@ export default function Home() {
         </div>
 
         {filteredStays.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredStays.map((stay, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                initial={{ opacity: 0, y: 30, scale: 0.97 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
               >
                 <StayCard stay={stay} index={index} />
               </motion.div>
@@ -213,9 +207,9 @@ export default function Home() {
         )}
       </section>
 
-      
-      <section className="reveal-section py-16 px-4 max-w-7xl mx-auto">
-        <div className="mb-12">
+      {/* Experiences Section */}
+      <section className="reveal-section py-14 px-4 max-w-7xl mx-auto">
+        <div className="mb-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-2">
             Unforgettable Experiences
           </h2>
@@ -224,14 +218,14 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="overflow-x-auto pb-4">
-          <div className="flex gap-6">
+        <div className="overflow-x-auto pb-3">
+          <div className="flex gap-5">
             {experiencesData.map((experience, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                initial={{ opacity: 0, y: 25, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: index * 0.05, duration: 0.6 }}
+                transition={{ delay: index * 0.03, duration: 0.4 }}
               >
                 <ExperienceCard experience={experience} index={index} />
               </motion.div>

@@ -11,12 +11,21 @@ import ExperienceDetails from "./pages/ExperienceDetails";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToTop from "./components/ScrollTop";
 import Cursor from "./components/Cursor";
+import Footer from "./components/Footer";
 import "./App.css";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: -50 },
+};
+
+const motionProps = {
+  variants: pageVariants,
+  initial: "initial",
+  animate: "animate",
+  exit: "exit",
+  transition: { duration: 0.4, ease: "easeInOut" },
 };
 
 function AnimatedRoutes() {
@@ -27,17 +36,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
-          element={
-            <motion.div
-              variants={pageVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              <Home />
-            </motion.div>
-          }
+          element={<motion.div {...motionProps}><Home /></motion.div>}
         />
         <Route
           path="/destinations"
@@ -64,31 +63,26 @@ function AnimatedRoutes() {
   );
 }
 
-const motionProps = {
-  variants: pageVariants,
-  initial: "initial",
-  animate: "animate",
-  exit: "exit",
-  transition: { duration: 0.6 },
-};
-
 export default function App() {
   const [loadingDone, setLoadingDone] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoadingDone(true), 2500);
+    const timer = setTimeout(() => setLoadingDone(true), 2000); 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      <Cursor /> {/* 👈 Global cursor — always active */}
+      <Cursor />
       {!loadingDone && <LoadingScreen />}
       {loadingDone && (
-        <div className="min-h-screen bg-white transition-all duration-700">
+        <div className="min-h-screen bg-white transition-all duration-700 flex flex-col">
           <Navbar />
           <ScrollToTop />
-          <AnimatedRoutes />
+          <div className="flex-grow">
+            <AnimatedRoutes />
+          </div>
+          <Footer />
         </div>
       )}
     </>
