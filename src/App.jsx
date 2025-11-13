@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { Routes, Route, useLocation } from "react-router"; // react-router-dom use karo
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
@@ -11,6 +11,7 @@ import ExperienceDetails from "./pages/ExperienceDetails";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToTop from "./components/ScrollTop";
 import Cursor from "./components/Cursor";
+import "./App.css";
 
 const pageVariants = {
   initial: { opacity: 0, y: 50 },
@@ -53,7 +54,62 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
-        {/* Add other routes similarly */}
+        <Route
+          path="/experiences"
+          element={
+            <motion.div
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.6 }}
+            >
+              <Experiences />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/reviews"
+          element={
+            <motion.div
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.6 }}
+            >
+              <Reviews />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/stay"
+          element={
+            <motion.div
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.6 }}
+            >
+              <StayDetails />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/experience-detail"
+          element={
+            <motion.div
+              variants={pageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.6 }}
+            >
+              <ExperienceDetails />
+            </motion.div>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
@@ -63,6 +119,7 @@ function App() {
   const [loadingDone, setLoadingDone] = useState(false);
 
   useEffect(() => {
+   
     const timer = setTimeout(() => setLoadingDone(true), 2500);
     return () => clearTimeout(timer);
   }, []);
